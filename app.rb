@@ -1,10 +1,17 @@
+#TODO Ask for a limit to the size of the password
+#TODO Remove version and cost from the password
+#TODO Ask if user wants numbers.
+#TODO Ask if user wants non-alpha non-numeric characters
+#TODO Filter out those the user doesn't want
+
+
 require 'bcrypt'
 require 'sequel'
 require 'time'
 require 'yaml'
 require 'json'
 
-def show
+def show_menu
     menu_text = <<-MENU
         This is the Passaver Menu. Choose a number:
         
@@ -20,21 +27,42 @@ end
 def new_password
     service = service_choice
     correct_choice? service
-    
+    name = user_name service
+    generate_password service, name
 end
 
 def service_choice
-    print "What is this password for? "
+    puts "What is this password for? "
     service = gets.chomp
 end
 
 def correct_choice? service 
-    print "For #{service}? Is that correct?"
-    if choice = gets.chomp! == "yes"
+    puts "For #{service}? Is that correct? "
+    choice = gets.chomp!
+    if choice == "y"
         return true
     else
         return false
     end
+end
+    
+def user_name service
+    puts "Please enter your user name for #{service}: "
+    user_name = gets.chomp
+end
+
+def generate_password service, name
+    puts "Here is your Password for #{name} on #{service}: "
+    password = BCrypt::Password.create name + service
+    save service,name,password
+    puts password
+end
+
+def save service, name, password
+    file = File.open("password","w") 
+    file.puts "#{service}: "
+    file.puts "  #{name}: #{password}"
+    file.close
 end
 
 def menu_input input
@@ -48,5 +76,5 @@ def menu_input input
 end
 
 
-show
-
+show_menu
+menu_input gets
