@@ -1,9 +1,8 @@
-#TODO Ask for a limit to the size of the password
+#TODO Ask for a limit to the size of the pass
 #TODO Remove version and cost from the password
 #TODO Ask if user wants numbers.
 #TODO Ask if user wants non alpha-numeric characters
 #TODO Filter out those the user doesn't want
-#TODO Actually output a string, not a BCrypt class object.
 
 
 require 'bcrypt'
@@ -106,6 +105,9 @@ def delete_password
 
 end
 
+def check_for_password
+    
+
 def menu_input input
     option = input.chomp.to_i
     case option
@@ -116,6 +118,13 @@ def menu_input input
     end
 end
 
+def secure_connection
+    check_for_password
+    crypted_password = reteive_password
+    verrify_password gets, cryted_password
+end
+
+secure_connection
 show_menu
 menu_input gets
 File.open('password.yml','w').write @database.to_yaml
