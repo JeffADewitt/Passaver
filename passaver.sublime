@@ -2,10 +2,10 @@
 	"buffers":
 	[
 		{
-			"file": "/home/lith/repo/rb/lytr/passaver/app.rb",
+			"file": "/home/lith/repo/rb/passaver/app.rb",
 			"settings":
 			{
-				"buffer_size": 2775,
+				"buffer_size": 5112,
 				"line_ending": "Unix"
 			}
 		}
@@ -13,6 +13,8 @@
 	"build_system": "",
 	"file_history":
 	[
+		"/home/lith/repo/rb/passaver/passaver.sublime",
+		"/home/lith/repo/rb/lytr/passaver/app.rb",
 		"/home/lith/repo/rb/shoes-projects/samples/sample-01.rb",
 		"/home/lith/repo/rb/shoes-projects/samples/Gemfile",
 		"/home/lith/.Sublime Text 2/Packages/User/Base File.sublime-settings",
@@ -52,7 +54,7 @@
 	{
 		"mount_points":
 		[
-			"/home/lith/repo/rb/lytr/passaver"
+			"/home/lith/repo/rb/passaver"
 		]
 	},
 	"groups":
@@ -63,18 +65,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/home/lith/repo/rb/lytr/passaver/app.rb",
+					"file": "/home/lith/repo/rb/passaver/app.rb",
 					"settings":
 					{
-						"buffer_size": 2775,
+						"buffer_size": 5112,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2334,
-								2334
+								3703,
+								3703
 							]
 						],
 						"settings":
@@ -84,7 +86,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
-						"translation.y": 204,
+						"translation.y": 2085,
 						"zoom_level": 1
 					},
 					"type": "text"
@@ -114,6 +116,7 @@
 			1
 		]
 	},
+	"menu_visible": true,
 	"save_all_on_build": true,
 	"select_file":
 	{
